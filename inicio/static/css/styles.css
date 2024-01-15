@@ -634,7 +634,7 @@ progress {
 .container-sm {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
-  width: 100%;
+  max-width: 1200px;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
@@ -10841,10 +10841,14 @@ textarea.form-control-lg {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("../assets/img/bg-masthead.jpg") no-repeat center center;
+  background: url("../assets/img/tecladogamer.jpg") no-repeat center center;
+  background-position: top center;
+  background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 80px 0 0 0;
 }
 header.masthead:before {
   content: "";
@@ -10873,8 +10877,8 @@ header.masthead h1, header.masthead .h1 {
   padding: 3rem;
 }
 .showcase .showcase-img {
-  min-height: 30rem;
-  background-size: cover;
+  flex-basis: 50%;
+   
 }
 @media (min-width: 768px) {
   .showcase .showcase-text {
