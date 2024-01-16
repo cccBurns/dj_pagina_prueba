@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Productos</title>
+{% endblock title_head %}
+
+{% block contiene_header %}
+
+{% endblock contiene_header %}
+
+{% block h1_header %}
+Productos
+{% endblock h1_header %}
+
+{% block section %}
+
+<section class="features-icons bg-light text-center">
+    <div class="container">
+        <div class="row">
+            <p class="comun">Nuestros Productos</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, expedita laboriosam suscipit rem eum, ratione sequi nesciunt obcaecati totam odio quos ab molestias dicta nobis ipsam enim nihil modi itaque?</p>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials text-center bg-white">
+    <div class="container">        
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="../static/assets/img/video3.jpg" alt="..." />
+                    <h2>Placas de video</h2>
+                    <h5>Nvidia - AMD </h5>
+                    <p class="font-weight-light mb-0">Poseemos las principales marcas de tarjetas graficas del mercado(AMD - Nvidia), desde gama baja hasta las placas mas potentes.</p>
+                    <a href= class="btn-1">Placas de video</a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="../static/assets/img/proce2.jpg" alt="..." />
+                    <h2>Procesadores</h2>
+                    <h5>AMD - Intel</h5>
+                    <p class="font-weight-light mb-0">Poseemos las principales marcas de procesadores del mercado(AMD - Intel), desde gama baja hasta los procesadores mas potentes.</p>
+                    <a href= class="btn-1">Procesadores</a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid rounded-circle mb-3" src="../static/assets/img/monitor3.jpg" alt="..." />
+                    <h2>Monitores</h2>
+                    <h5>La mejor linea</h5>
+                    <p class="font-weight-light mb-0">Poseemos un amplio abanico de diferentes marcas y gamas de monitores, como LG, Samgung, Sony, Dell, etc.</p>
+                    <a href= class="btn-1">Monitores</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% comment %} <section id="abajo" class="blog" >
+    <span></span>
+    <h2>Nuestros Productos</h2>
+
+    <div class="blog-content container">
+        <div class="blog-1">
+            <img src="../static/assets/img/video3.jpg" alt="">
+            <div class="blog-txt">
+                <span> <strong> Placas de video </strong> </span>
+                <h3>Nvidia - AMD </h3>
+                <p>Poseemos las principales marcas de tarjetas graficas del mercado(AMD - Nvidia), desde gama baja hasta las placas mas potentes.
+                </p>
+                <a href= class="btn-1">Placas de video</a>
+            </div>
+        </div>
+
+        <div class="blog-1">
+            <img src="../static/assets/img/proce2.jpg" alt="">
+            <div class="blog-txt">
+                <span> <strong> Procesadores </strong> </span>
+                <h3>AMD - Intel</h3>
+                <p>Poseemos las principales marcas de procesadores del mercado(AMD - Intel), desde gama baja hasta los procesadores mas potentes.
+                </p>
+                <a href= class="btn-1">Procesadores</a>
+            </div>
+        </div>
+
+        <div class="blog-1">
+            <img src="../static/assets/img/monitor3.jpg" alt="">
+            <div class="blog-txt">
+                <span> <strong> Monitores </strong> </span>
+                <h3>La mejor linea</h3>
+                <p>Poseemos un amplio abanico de diferentes marcas y gamas de monitores, como LG, Samgung, Sony, Dell, etc.
+                </p>
+                <a href= class="btn-1">Monitores</a>
+            </div>
+        </div>
+
+    </div>
+</section> {% endcomment %}
+
+{% endblock section %}
+
+{% block footer %}
+
+<footer class="footer bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                <ul class="list-inline mb-2">
+                    <li class="list-inline-item"><a href="#!"><strong>Inicio</strong></a></li>
+                    <li class="list-inline-item">⋅</li>
+                    <li class="list-inline-item"><a href="#!"><strong>About</strong></a></li>
+                    <li class="list-inline-item">⋅</li>
+                    <li class="list-inline-item"><a href="#!"><strong>Contacto</strong></a></li>
+                   
+                </ul>
+                <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2023. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% endblock footer %}
