@@ -5,25 +5,74 @@
 {% endblock title_head %}
 
 {% block contiene_header %}
-
-{% endblock contiene_header %}
+        <header class="about">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="text-center">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <h1 class="comun" style="font-size: 50px">Nuestros Productos</h1>
+                            <br>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <span class="span">HARD GAMERS!</span> Dolor, expedita laboriosam suscipit rem eum, ratione sequi nesciunt obcaecati totam odio quos ab molestias dicta nobis ipsam enim nihil modi itaque?</p>
+                            <br>
+                            <a href="#abajo" class="btn-1">Ver mas</a>
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- * * SB Forms Contact Form * *-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- This form is pre-integrated with SB Forms.-->
+                            <!-- To make this form functional, sign up at-->
+                            <!-- https://startbootstrap.com/solution/contact-forms-->
+                            <!-- to get an API token!-->
+                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <!-- Email address input-->
+                                {% comment %} <div class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+                                    </div>
+                                    <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                                </div> {% endcomment %}
+                                <!-- Submit success message-->
+                                <!---->
+                                <!-- This is what your users will see when the form-->
+                                <!-- has successfully submitted-->
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Form submission successful!</div>
+                                        <p>To activate this form, sign up at</p>
+                                        <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    </div>
+                                </div>
+                                <!-- Submit error message-->
+                                <!---->
+                                <!-- This is what your users will see when there is-->
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% endblock contiene_header %}
 
 {% block h1_header %}
-Productos
+
 {% endblock h1_header %}
 
 {% block section %}
 
-<section class="features-icons bg-light text-center">
+{% comment %} <section id="abajo" class="features-icons bg-light text-center">
     <div class="container">
         <div class="row">
             <p class="comun">Nuestros Productos</p>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, expedita laboriosam suscipit rem eum, ratione sequi nesciunt obcaecati totam odio quos ab molestias dicta nobis ipsam enim nihil modi itaque?</p>
         </div>
     </div>
-</section>
+</section> {% endcomment %}
 
-<section class="testimonials text-center bg-white">
+<section id="abajo" class="testimonials text-center bg-white">
     <div class="container">        
         <div class="row">
             <div class="col-lg-4">
@@ -32,6 +81,7 @@ Productos
                     <h2>Placas de video</h2>
                     <h5>Nvidia - AMD </h5>
                     <p class="font-weight-light mb-0">Poseemos las principales marcas de tarjetas graficas del mercado(AMD - Nvidia), desde gama baja hasta las placas mas potentes.</p>
+                    <br>
                     <a href={% url "placas" %} class="btn-1">Placas de video</a>
                 </div>
             </div>
@@ -41,6 +91,7 @@ Productos
                     <h2>Procesadores</h2>
                     <h5>AMD - Intel</h5>
                     <p class="font-weight-light mb-0">Poseemos las principales marcas de procesadores del mercado(AMD - Intel), desde gama baja hasta los procesadores mas potentes.</p>
+                    <br>
                     <a href={% url "procesadores" %} class="btn-1">Procesadores</a>
                 </div>
             </div>
@@ -50,6 +101,8 @@ Productos
                     <h2>Monitores</h2>
                     <h5>La mejor linea</h5>
                     <p class="font-weight-light mb-0">Poseemos un amplio abanico de diferentes marcas y gamas de monitores, como LG, Samgung, Sony, Dell, etc.</p>
+                    <br>
+                    <br>
                     <a href={% url "monitores" %} class="btn-1">Monitores</a>
                 </div>
             </div>
