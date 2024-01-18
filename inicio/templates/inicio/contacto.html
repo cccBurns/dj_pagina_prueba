@@ -92,24 +92,26 @@
         </div>
     </div>
 </section>
+<br>
 
 {% endblock section %}
 
 {% block footer %}
-
 <footer class="footer bg-light">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                 <ul class="list-inline mb-2">
-                    <li class="list-inline-item"><a href="#!"><strong>Inicio</strong></a></li>
+                    <li class="list-inline-item"><a href="{% url 'inicio' %}"><strong>Inicio</strong></a></li>
                     <li class="list-inline-item">⋅</li>
-                    <li class="list-inline-item"><a href="#!"><strong>About</strong></a></li>
+                    <li class="list-inline-item"><a href="{% url 'about' %}"><strong>About</strong></a></li>
                     <li class="list-inline-item">⋅</li>
-                    <li class="list-inline-item"><a href="#!"><strong>Productos</strong></a></li>
-                   
+                    <li class="list-inline-item"><a href="{% url 'productos' %}"><strong>Productos</strong></a></li>
+                    <li class="list-inline-item">⋅</li>
+                    <li class="list-inline-item"><a href="{% url 'contacto' %}"><strong>Contacto</strong></a></li>
+                    <li class="list-inline-item">⋅</li>                    
                 </ul>
-                <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2023. All Rights Reserved.</p>
+                <p class="text-muted small mb-4 mb-lg-0">&copy; <span class="span">HARD GAMERS!</span> 2024. All Rights Reserved.</p>
             </div>
             <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                 <ul class="list-inline mb-0">
@@ -127,6 +129,5 @@
         </div>
     </div>
 </footer>
-
 {% endblock footer %}
 

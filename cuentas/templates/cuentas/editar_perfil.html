@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+
+{% block title_head %}
+    <title>Editar Perfil</title>
+{% endblock title_head %}
+
+
+{% block contiene_header %}
+
+{% endblock contiene_header %}
+
+
+{% block h1_header %}
+
+{% endblock h1_header %}
+
+
+{% block main %}
+    
+{% endblock main %}
+
+
+
+
+
+
+{% block section %}
+
+<section class="features-icons bg-light text-center">
+   <div class="container">
+       <div class="row">
+           <h1 class="comun">Editar Perfil</h1>
+            {% if request.user.datosextra.avatar %}
+            <div><img src="{{request.user.datosextra.avatar.url}}" alt="Foto de Perfil" height='200px'></div>
+            {% endif %}
+            <h1>Bienvenido {{request.user.username}}</h1>
+            <br>
+            <form action={% url "editar_perfil" %} method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+            <table>
+            {{formulario.media}}
+            {{formulario}}
+            </table>
+            <br>
+            <input type="submit" value="Editar Perfil">
+            <br>
+            <br>
+            </form>
+            <a href={% url "cambiar_password" %}>Cambiar Contraseña</a>
+       </div>
+   </div>
+</section>
+
+{% endblock section %}
+
+{% block footer %}
+<footer class="footer bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                <ul class="list-inline mb-2">
+                    <li class="list-inline-item"><a href="{% url 'inicio' %}"><strong>Inicio</strong></a></li>
+                    <li class="list-inline-item">⋅</li>
+                    <li class="list-inline-item"><a href="{% url 'about' %}"><strong>About</strong></a></li>
+                    <li class="list-inline-item">⋅</li>
+                    <li class="list-inline-item"><a href="{% url 'productos' %}"><strong>Productos</strong></a></li>
+                    <li class="list-inline-item">⋅</li>
+                    <li class="list-inline-item"><a href="{% url 'contacto' %}"><strong>Contacto</strong></a></li>
+                    <li class="list-inline-item">⋅</li>                    
+                </ul>
+                <p class="text-muted small mb-4 mb-lg-0">&copy; <span class="span">HARD GAMERS!</span> 2024. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock footer %}

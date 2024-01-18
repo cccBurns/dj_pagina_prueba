@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block title_head %}
-<title>Productos</title>
-{% endblock title_head %}
+{% block tittle_head %} 
+<title>Perfil</title>
+{% endblock tittle_head %}
 
 {% block contiene_header %}
         <header class="about">
@@ -11,11 +11,34 @@
                     <div class="text-center">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="comun" style="font-size: 50px">Nuestros Productos</h1>
+                            <h1 class="comun" style="font-size: 50px">Perfil</h1>
                             <br>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <span class="span">HARD GAMERS!</span> Dolor, expedita laboriosam suscipit rem eum, ratione sequi nesciunt obcaecati totam odio quos ab molestias dicta nobis ipsam enim nihil modi itaque?</p>
+                            <p>Tus datos en <span class="span">HARD GAMERS!</span>.</p>
                             <br>
-                            <a href="#abajo" class="btn-1">Ver mas</a>
+                            
+                            {% if request.user.datosextra.avatar %}
+                            <div><img src="{{request.user.datosextra.avatar.url}}" alt="Foto de Perfil" height='200px'></div>
+                            {% endif %}
+                            <h1>Bienvenido {{request.user.username}}</h1>
+                            <br>
+
+                            <li>
+                                {{request.user.first_name}}
+                            </li>    
+                            <li>
+                                {{request.user.last_name}}
+                            </li>
+                            <li>
+                              {{request.user.email}}
+                          </li>
+                            <li>
+                                {{biografia | safe}}
+                            </li> 
+                            <br>
+                            <a class="btn-1" href="{% url "editar_perfil" %}">Editar Perfil</a>
+                            
+                            <br>
+                                                        
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
                             <!-- * * * * * * * * * * * * * * *-->
@@ -55,103 +78,22 @@
                 </div>
             </div>
         </header>
-        {% endblock contiene_header %}
+{% endblock contiene_header %}
 
 {% block h1_header %}
 
 {% endblock h1_header %}
 
+
 {% block section %}
 
-{% comment %} <section id="abajo" class="features-icons bg-light text-center">
-    <div class="container">
-        <div class="row">
-            <p class="comun">Nuestros Productos</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, expedita laboriosam suscipit rem eum, ratione sequi nesciunt obcaecati totam odio quos ab molestias dicta nobis ipsam enim nihil modi itaque?</p>
-        </div>
-    </div>
-</section> {% endcomment %}
-
-<section id="abajo" class="testimonials text-center bg-white">
-    <div class="container">        
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                    <img class="img-fluid rounded-0 mb-3" src="../static/assets/img/video3.jpg" alt="..." style="max-width: 250px; height: auto;" />
-                    <h2>Placas de video</h2>
-                    <h5>Nvidia - AMD </h5>
-                    <p class="font-weight-light mb-0">Poseemos las principales marcas de tarjetas graficas del mercado(AMD - Nvidia), desde gama baja hasta las placas mas potentes.</p>
-                    <br>
-                    <a href={% url "placas" %} class="btn-1">Placas de video</a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                    <img class="img-fluid rounded-0 mb-3" src="../static/assets/img/proce2.jpg" alt="..." style="max-width: 250px; height: auto;"/>
-                    <h2>Procesadores</h2>
-                    <h5>AMD - Intel</h5>
-                    <p class="font-weight-light mb-0">Poseemos las principales marcas de procesadores del mercado(AMD - Intel), desde gama baja hasta los procesadores mas potentes.</p>
-                    <br>
-                    <a href={% url "procesadores" %} class="btn-1">Procesadores</a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                    <img class="img-fluid rounded-0 mb-3" src="../static/assets/img/monitor3.jpg" alt="..." style="max-width: 250px; height: auto;" />
-                    <h2>Monitores</h2>
-                    <h5>La mejor linea</h5>
-                    <p class="font-weight-light mb-0">Poseemos un amplio abanico de diferentes marcas y gamas de monitores, como LG, Samgung, Sony, Dell, etc.</p>
-                    <br>
-                    <br>
-                    <a href={% url "monitores" %} class="btn-1">Monitores</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-{% comment %} <section id="abajo" class="blog" >
-    <span></span>
-    <h2>Nuestros Productos</h2>
-
-    <div class="blog-content container">
-        <div class="blog-1">
-            <img src="../static/assets/img/video3.jpg" alt="">
-            <div class="blog-txt">
-                <span> <strong> Placas de video </strong> </span>
-                <h3>Nvidia - AMD </h3>
-                <p>Poseemos las principales marcas de tarjetas graficas del mercado(AMD - Nvidia), desde gama baja hasta las placas mas potentes.
-                </p>
-                <a href= class="btn-1">Placas de video</a>
-            </div>
-        </div>
-
-        <div class="blog-1">
-            <img src="../static/assets/img/proce2.jpg" alt="">
-            <div class="blog-txt">
-                <span> <strong> Procesadores </strong> </span>
-                <h3>AMD - Intel</h3>
-                <p>Poseemos las principales marcas de procesadores del mercado(AMD - Intel), desde gama baja hasta los procesadores mas potentes.
-                </p>
-                <a href= class="btn-1">Procesadores</a>
-            </div>
-        </div>
-
-        <div class="blog-1">
-            <img src="../static/assets/img/monitor3.jpg" alt="">
-            <div class="blog-txt">
-                <span> <strong> Monitores </strong> </span>
-                <h3>La mejor linea</h3>
-                <p>Poseemos un amplio abanico de diferentes marcas y gamas de monitores, como LG, Samgung, Sony, Dell, etc.
-                </p>
-                <a href= class="btn-1">Monitores</a>
-            </div>
-        </div>
-
-    </div>
-</section> {% endcomment %}
-
 {% endblock section %}
+
+{% block main %}
+
+{% endblock main %}
+
+
 
 {% block footer %}
 <footer class="footer bg-light">
@@ -187,3 +129,6 @@
     </div>
 </footer>
 {% endblock footer %}
+
+
+
