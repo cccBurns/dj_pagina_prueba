@@ -8,5 +8,5 @@ urlpatterns = [
     path('registro/', registro, name='registrarse'),
     path('perfil/editar/', editar_perfil, name='editar_perfil'),
     path('perfil/editar/password/', CambiarPassword.as_view(template_name='cambiar_password.html'), name='cambiar_password'),
-    path('perfil/', Perfil , name='perfil'),
+    path('perfil/', Perfil, name='perfil'),
 ]

@@ -1,5 +1,5 @@
 from django.urls import path
-from hardware.views import listado_monitores, crear_monitor, eliminar_monitor, actualizar_monitor, detalle_monitor, ListadoProcesadores, CrearProcesador, ActualizarProcesador, EliminarProcesador, DetalleProcesador, ListadoPlacas, CrearPlaca, ActualizarPlaca, EliminarPlaca, DetallePlaca
+from hardware.views import listado_monitores, crear_monitor, eliminar_monitor, actualizar_monitor, detalle_monitor,ListadoProcesadores, CrearProcesador, ActualizarProcesador, EliminarProcesador, DetalleProcesador, ListadoPlacas, CrearPlaca, ActualizarPlaca, EliminarPlaca, DetallePlaca
 
 urlpatterns = [
     path('monitores/', listado_monitores, name='monitores'),
@@ -16,5 +16,5 @@ urlpatterns = [
     path('placas/crear/', CrearPlaca.as_view(), name='crear_placa'),
     path('placas/<int:pk>/', DetallePlaca.as_view(), name='detalle_placa'),
     path('placas/<int:pk>/actualizar/', ActualizarPlaca.as_view(), name='actualizar_placa'),
-    path('placas/<int:pk>/eliminar/', EliminarPlaca.as_view(), name='eliminar_placa'),
+    path('placas/<int:pk>/eliminar/', EliminarPlaca.as_view(), name='eliminar_placa'),    
 ]

@@ -10,9 +10,9 @@ from hardware.forms import CrearMonitorFormulario, BusquedaMonitorFormulario, Ac
 
 # MONITORES
 
-def listado_monitores(request):
+def listado_monitores(request):    
     formulario = BusquedaMonitorFormulario(request.GET)
-    listado_monitores = None
+    listado_de_monitores = None
     
     if formulario.is_valid():
         marca_a_buscar = formulario.cleaned_data.get('marca')
@@ -22,7 +22,7 @@ def listado_monitores(request):
     return render(request, 'hardware/monitores.html', {'formulario': formulario, 'listado_de_monitores': listado_de_monitores})
 
 @login_required
-def crear_monitor(request):
+def crear_monitor(request):    
     
     if request.method == 'POST':
         formulario = CrearMonitorFormulario(request.POST, request.FILES)
@@ -32,7 +32,7 @@ def crear_monitor(request):
             marca = info_limpia.get('marca')
             descripcion = info_limpia.get('descripcion')
             anio = info_limpia.get('anio')
-            
+    
             monitor = Monitor(marca=marca.lower(), descripcion=descripcion, anio=anio)
             monitor.save()
             
@@ -47,7 +47,7 @@ def crear_monitor(request):
 def eliminar_monitor(request, monitor_id):
     monitor_a_eliminar = Monitor.objects.get(id=monitor_id)
     monitor_a_eliminar.delete()
-    return redirect('monitores')
+    return redirect("monitores")
 
 @login_required
 def actualizar_monitor(request, monitor_id):
@@ -66,14 +66,14 @@ def actualizar_monitor(request, monitor_id):
             return redirect('hardware/monitores')
         else:
             return render(request, 'hardware/monitores.html', {'formaulario': formulario})
-        
-        formulario = ActualizarMonitorFormulario(initial={'marca': monitor_a_actualizar.marca, 'descripcion': monitor_a_actualizar.descripcion,'anio': monitor_a_actualizar.anio})
+    
+    
+    formulario = ActualizarMonitorFormulario(initial={'marca': monitor_a_actualizar.marca, 'descripcion': monitor_a_actualizar.descripcion,'anio': monitor_a_actualizar.anio})
     return render(request, 'hardware/actualizar_monitor.html', {'formulario': formulario})
 
 def detalle_monitor(request, monitor_id):
     monitor = Monitor.objects.get(id=monitor_id)
     return render(request, 'hardware/detalle_monitor.html', {'monitor': monitor})
-
 
 # PROCESADORES
 
