@@ -11034,3 +11034,18 @@ footer.footer {
   color: #141414;
 }
 
+.cerrar-sesion-btn {
+  background-color: red;
+  border-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.cerrar-sesion-btn:hover {
+  background-color: darkred;
+  border-color: darkred;
+}
+

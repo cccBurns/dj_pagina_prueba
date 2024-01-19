@@ -40,9 +40,9 @@
                 {% endif %}
                     {{request.user.username}}
                     </a>
-                    <form method="post" action="{% url 'logout' %}">
+                    <form method="post" class="navbar-brand" style="color: red;" action="{% url 'logout' %}">
                         {% csrf_token %}
-                        <button type="submit" class="nav-link btn btn-link text-light">Cerrar Sesion</button>
+                        <button type="submit" class="btn btn-danger cerrar-sesion-btn">Cerrar Sesion</button>
                     </form>
                 {% endif %}
                 </div>
@@ -50,10 +50,10 @@
         </nav>
         <!-- Masthead-->
         {% block contiene_header %}
-        <header class="masthead"
-            <div class="container position-relative"
-                <div class="row justify-content-center"
-                    <div class="col-xl-6"
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
                         <div class="text-center text-white"
                             <!-- Page heading-->
                             <p class="titulo">HARD GAMERS!</p>
@@ -79,8 +79,8 @@
                                 <!---->
                                 <!-- This is what your users will see when the form-->
                                 <!-- has successfully submitted-->
-                                <div class="d-none" id="submitSuccessMessage"
-                                    <div class="text-center mb-3"
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
                                         <div class="fw-bolder">Form submission successful!</div>
                                         <p>To activate this form, sign up at</p>
                                         <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
@@ -113,25 +113,25 @@
 
         {% block section %}        
         <!-- Icons Grid-->
-        <section class="features-icons bg-light text-center"
-            <div class="container"
-                <div class="row"
-                    <div class="col-lg-4"
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3"
+        <section class="features-icons bg-light text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                             <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
                             <h3>Haces la compra</h3>
                             <p class="lead mb-0">Seleccionas los productos que quieras desde la pagina web.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4"
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3"
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                             <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
                             <h3>Preparamos el pedido</h3>
                             <p class="lead mb-0">Lo envalamos en nuestra tela patentada anti golpe Bob-Box.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4"
-                        <div class="features-icons-item mx-auto mb-0 mb-lg-3"
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                             <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
                             <h3>Te lo enviamos</h3>
                             <p class="lead mb-0">Llega a tu casa dentro de las 24hs.</p>
@@ -141,27 +141,27 @@
             </div>
         </section>
         <!-- Image Showcases-->
-        <section class="showcase"
+        <section class="showcase">
             <div class="container-fluid p-0">                
-                <div class="row g-0"
+                <div class="row g-0">
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('../static/assets/img/bg-showcase-3.jpg') ; background-size: cover;"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text"
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                         <h1 class="comun">Placas de video</h1>
                         <h2>Nvidia - AMD</h2>                        
                         <p class="lead mb-0">La tarjeta gráfica o tarjeta de vídeo de un componente que viene integrado en la placa base del PC o se instala a parte para ampliar sus capacidades. Concretamente, esta tarjeta está dedicada al procesamiento de datos relacionados con el vídeo y las imágenes que se están reproduciendo en el ordenador.</p>
                     </div>
                 </div>
-                <div class="row g-0"
+                <div class="row g-0">
                     <div class="col-lg-6 text-white showcase-img" style="background-image: url('../static/assets/img/bg-showcase.jpg') ; background-size: cover;"></div>
-                    <div class="col-lg-6 my-auto showcase-text"
+                    <div class="col-lg-6 my-auto showcase-text">
                         <h1 class="comun">Procesadores</h1>
                         <h2>Intel - AMD</h2>
                         <p class="lead mb-0">Es el cerebro de todo el funcionamiento del sistema, el encargado de dirigir todas las tareas que lleva a cabo el equipo y de ejecutar el código de los diferentes programas. Muchas veces, con la ayuda del resto de componentes y periféricos.</p>
                     </div>
                 </div>
-                <div class="row g-0"
+                <div class="row g-0">
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('../static/assets/img/bg-showcase-1.jpg') ; background-size: cover;"></div>
-                    <div class="col-lg-6 order-lg-1 my-auto showcase-text"
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                         <h1 class="comun">Monitores</h1>
                         <p class="lead mb-0">El monitor del computador, también conocido como pantalla, muestra la información de tu equipo como imágenes y textos, que son generados gracias a una tarjeta de video que se encuentra en el interior de la torre del computador.</p>
                     </div>
