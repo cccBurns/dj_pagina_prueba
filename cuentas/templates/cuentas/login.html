@@ -4,22 +4,43 @@
     <title>Login</title>
 {% endblock title_head %}
 
-{% block h1_header %}
-<h1 style="text-align: center; margin-top: 20px;" >
-    Iniciar Sesion
-</h1>
+{% block contiene_header %}
+
+<header class="about">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="text-center">
+                <div class="text-center text-white">
+                    <h1 class="comun">
+                        Iniciar Sesion
+                    </h1>
+                    <br>
+
+                    <form class="navbar-brand" action={% url "login" %} method="POST">
+                        {% csrf_token %}
+                        <table>
+                        {{form}}
+                        </table>
+                        <br>
+                        <input class="btn-1" type="submit" value="Iniciar Sesion">
+                     </form>                    
+                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% endblock contiene_header %}
+
+{% block h1_header %}    
 {% endblock h1_header %}
 
-{% block main %}
+{% block section %}
+{% endblock section %}
 
-<form class="form.login" action={% url "login" %} method="POST">
-    {% csrf_token %}
-    <table>
-    {{form}}
-    </table>
-    <input type="submit" value="Iniciar Sesion">
- </form>
-    
+{% block main %}   
 {% endblock main %}
 
 {% block footer %}
